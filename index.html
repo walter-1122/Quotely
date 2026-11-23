@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Quotely helps wholesalers manage products, quotations and customers worldwide.">
+<title>Quotely — Wholesale, Simplified.</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:#0b1120;
+  --panel:#111b2e;
+  --panel2:#162238;
+  --blue:#5794ff;
+  --cyan:#67d7e9;
+  --text:#f5f7ff;
+  --muted:#a0acc1;
+  --border:rgba(255,255,255,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.container{width:min(1160px,90%);margin:auto}
+nav{
+  height:82px;display:flex;align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--border);
+}
+.logo{font:800 25px Manrope,sans-serif;letter-spacing:-1px}
+.logo span{color:var(--blue)}
+.navlinks{display:flex;gap:30px;color:var(--muted);font-size:14px}
+.navlinks a:hover{color:white}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 21px;border-radius:9px;
+  font-weight:700;font-size:14px;
+  transition:.25s;border:1px solid transparent;
+}
+.btn:hover{transform:translateY(-3px)}
+.primary{
+  color:white;background:linear-gradient(120deg,#3978ed,#679eff);
+  box-shadow:0 8px 30px rgba(64,125,255,.2)
+}
+.secondary{border-color:var(--border);color:white}
+.hero{
+  min-height:660px;display:grid;
+  grid-template-columns:1fr 1fr;align-items:center;gap:55px;
+  padding-top:85px;padding-bottom:85px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid rgba(87,148,255,.3);
+  background:rgba(87,148,255,.08);
+  color:#8db7ff;padding:9px 14px;
+  border-radius:30px;font-size:12px;font-weight:700;
+  letter-spacing:.5px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#63d8ad}
+h1{
+  font:800 clamp(42px,5vw,65px)/1.12 Manrope,sans-serif;
+  letter-spacing:-3px;margin:26px 0 20px;
+}
+.gradient{
+  background:linear-gradient(100deg,#75a8ff,#67d7e9);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);line-height:1.85;max-width:510px;font-size:16px}
+.hero-buttons{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+.trust{margin-top:36px;color:#8290a7;font-size:12px}
+.trust strong{color:#dce5f5}
+.preview{
+  background:linear-gradient(145deg,#17243b,#101a2b);
+  border:1px solid rgba(140,175,255,.2);
+  border-radius:17px;padding:19px;
+  box-shadow:0 35px 100px rgba(0,0,0,.4);
+  transform:perspective(1000px) rotateY(-4deg);
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{50%{transform:perspective(1000px) rotateY(-2deg) translateY(-9px)}}
+.preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.preview-title{font-weight:800;font-size:15px}
+.live{color:#69d9b1;font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{
+  background:rgba(255,255,255,.045);padding:14px 11px;
+  border:1px solid var(--border);border-radius:10px;
+}
+.stat small{display:block;color:var(--muted);font-size:10px}
+.stat b{display:block;font-size:21px;margin-top:8px}
+.stat em{font-style:normal;color:#6bd5ae;font-size:10px}
+.chart{
+  margin-top:13px;background:rgba(255,255,255,.035);
+  border:1px solid var(--border);padding:17px;border-radius:10px;
+}
+.chart-head{display:flex;justify-content:space-between;font-size:12px}
+.bars{height:105px;display:flex;align-items:end;gap:9px;margin-top:17px}
+.bar{
+  flex:1;border-radius:5px 5px 0 0;
+  background:linear-gradient(to top,#3676e7,#6ed6e6);
+  opacity:.85;animation:grow 1.3s ease both;
+}
+@keyframes grow{from{height:0!important}}
+.activity{margin-top:13px;padding:15px;background:rgba(255,255,255,.035);border-radius:10px}
+.activity-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:11px}
+.activity-row:last-child{border:0}
+section{padding:95px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.kicker{color:#78a9ff;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800}
+h2{font:800 clamp(29px,4vw,42px)/1.2 Manrope;margin:15px 0}
+.section-head p{color:var(--muted);line-height:1.8}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.feature{
+  background:linear-gradient(145deg,#131e32,#101827);
+  border:1px solid var(--border);padding:28px;border-radius:14px;
+  transition:.3s;
+}
+.feature:hover{transform:translateY(-6px);border-color:#5794ff66}
+.feature-icon{
+  width:46px;height:46px;display:grid;place-items:center;
+  background:rgba(87,148,255,.12);border-radius:12px;
+  font-size:22px;margin-bottom:21px;
+}
+.feature h3{font-size:17px;margin-bottom:10px}
+.feature p{font-size:13px;line-height:1.8;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.step{text-align:center;padding:25px}
+.number{
+  width:50px;height:50px;display:grid;place-items:center;
+  margin:0 auto 20px;border-radius:50%;
+  background:linear-gradient(130deg,#3978ed,#67d7e9);
+  font-weight:800;font-size:18px;
+}
+.step p{color:var(--muted);font-size:13px;line-height:1.8;margin-top:10px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price-card{
+  background:#111b2e;border:1px solid var(--border);
+  border-radius:15px;padding:29px;
+}
+.price-card.popular{border-color:#5794ff;box-shadow:0 0 35px #3978ed20}
+.price-card h3{font-size:18px}
+.price{font:800 38px Manrope;margin:20px 0 5px}
+.price small{font:400 13px DM Sans;color:var(--muted)}
+.price-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.price-card ul{list-style:none;margin:23px 0}
+.price-card li{font-size:13px;padding:9px 0;color:#d7e0f1}
+.price-card li:before{content:"✓";color:#69d9b1;margin-right:10px}
+.price-card .btn{width:100%}
+.cta{
+  text-align:center;border:1px solid #5794ff44;
+  background:radial-gradient(ellipse at top,#1c3760,#111a2b 70%);
+  border-radius:20px;padding:65px 25px;
+}
+.cta p{color:var(--muted);margin:15px auto 25px;max-width:520px;line-height:1.8}
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:850px){
+ .hero{grid-template-columns:1fr;padding-top:70px;gap:45px}
+ .preview{transform:none;animation:none}
+ .features,.pricing{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:1fr}
+ .navlinks{display:none}
+}
+@media(max-width:540px){
+ nav{height:70px}
+ .logo{font-size:22px}
+ .nav-actions .secondary{display:none}
+ .nav-actions .btn{padding:10px 13px;font-size:12px}
+ .hero{min-height:auto;padding:65px 0}
+ h1{letter-spacing:-2px}
+ .features,.pricing{grid-template-columns:1fr}
+ section{padding:70px 0}
+ .stats{gap:6px}
+ .stat{padding:11px 7px}
+ .stat b{font-size:18px}
+ .preview{padding:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+<nav>
+  <a class="logo" href="#">quo<span>tely</span>.</a>
+  <div class="navlinks">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn secondary" href="#pricing">Explore plans</a>
+    <a class="btn primary" href="#start">Get started →</a>
+  </div>
+</nav>
+</header>
+
+<main>
+<div class="container hero">
+  <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span> WHOLESALE MANAGEMENT, REIMAGINED</div>
+    <h1>Wholesale business.<br><span class="gradient">Without the chaos.</span></h1>
+    <p>
+      One powerful workspace to showcase your products,
+      manage customer enquiries and create professional
+      wholesale quotations. All in one place.
+    </p>
+    <div class="hero-buttons">
+      <a href="#start" class="btn primary">Start for free →</a>
+      <a href="#features" class="btn secondary">Explore features</a>
+    </div>
+    <div class="trust">BUILT FOR <strong>GLOBAL WHOLESALERS</strong> · SIMPLE · SMART · CONNECTED</div>
+  </div>
+
+  <div class="preview reveal">
+    <div class="preview-top">
+      <div class="preview-title">Business overview</div>
+      <div class="live">● Dashboard preview</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><small>Products</small><b>128</b><em>Catalogue</em></div>
+      <div class="stat"><small>Enquiries</small><b>64</b><em>Requests</em></div>
+      <div class="stat"><small>Quotations</small><b>32</b><em>Prepared</em></div>
+    </div>
+    <div class="chart">
+      <div class="chart-head"><b>Business activity</b><span style="color:#6bd5ae">Weekly</span></div>
+      <div class="bars">
+        <div class="bar" style="height:35%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:43%"></div>
+        <div class="bar" style="height:75%"></div>
+        <div class="bar" style="height:62%"></div>
+        <div class="bar" style="height:90%"></div>
+        <div class="bar" style="height:100%"></div>
+      </div>
+    </div>
+    <div class="activity">
+      <div style="font-weight:700;font-size:12px;margin-bottom:7px">Recent activity</div>
+      <div class="activity-row"><span>New customer enquiry</span><span style="color:#6bd5ae">Received</span></div>
+      <div class="activity-row"><span>Quotation prepared</span><span style="color:#78a9ff">Ready</span></div>
+      <div class="activity-row"><span>Product catalogue</span><span>Updated</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="features">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="kicker">Everything in one place</div>
+    <h2>Run your wholesale business smarter.</h2>
+    <p>Less manual work. Better organisation. A more professional experience for every customer.</p>
+  </div>
+  <div class="features">
+    <div class="feature reveal"><div class="feature-icon">📦</div><h3>Product Catalogue</h3><p>Organise your products, images, descriptions and minimum order quantities in one digital catalogue.</p></div>
+    <div class="feature reveal"><div class="feature-icon">💬</div><h3>Customer Enquiries</h3><p>Receive and organise wholesale requests from potential buyers.</p></div>
+    <div class="feature reveal"><div class="feature-icon">📄</div><h3>Smart Quotations</h3><p>Prepare professional quotations for customers without repetitive manual work.</p></div>
+    <div class="feature reveal"><div class="feature-icon">🌍</div><h3>Global Catalogue</h3><p>Share your product catalogue through a simple link with buyers worldwide.</p></div>
+    <div class="feature reveal"><div class="feature-icon">📊</div><h3>Business Overview</h3><p>Keep an eye on products, enquiries and quotations from one dashboard.</p></div>
+    <div class="feature reveal"><div class="feature-icon">📱</div><h3>WhatsApp Ready</h3><p>Make it easier for buyers and sellers to continue their conversations.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="how" style="background:#0e1728">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="kicker">Simple by design</div>
+    <h2>Get started in three steps.</h2>
+    <p>Designed to make wholesale management easier, even for small teams.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="number">01</div><h3>Create your account</h3><p>Set up your business profile and get ready to organise your products.</p></div>
+    <div class="step reveal"><div class="number">02</div><h3>Add your products</h3><p>Upload your product information and create your shareable catalogue.</p></div>
+    <div class="step reveal"><div class="number">03</div><h3>Receive enquiries</h3><p>Share your catalogue and start receiving wholesale requests.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+  <div class="section-head reveal">
+    <div class="kicker">Simple pricing</div>
+    <h2>Plans that grow with you.</h2>
+    <p>Start free and explore more tools as your business grows.</p>
+  </div>
+  <div class="pricing">
+    <div class="price-card reveal">
+      <h3>Free</h3><div class="price">$0 <small>/ month</small></div>
+      <p>For exploring Quotely.</p>
+      <ul><li>Up to 20 products</li><li>Digital catalogue</li><li>Basic enquiries</li></ul>
+      <a class="btn secondary" href="#start">Get started</a>
+    </div>
+    <div class="price-card popular reveal">
+      <div class="kicker">Recommended</div>
+      <h3 style="margin-top:12px">Business</h3>
+      <div class="price">$12 <small>/ month</small></div>
+      <p>For growing wholesale businesses.</p>
+      <ul><li>Up to 500 products</li><li>Customer enquiries</li><li>Quotation tools</li><li>Business overview</li></ul>
+      <a class="btn primary" href="#start">Choose Business</a>
+    </div>
+    <div class="price-card reveal">
+      <h3>Pro</h3><div class="price">$25 <small>/ month</small></div>
+      <p>For established sellers.</p>
+      <ul><li>Advanced catalogue</li><li>More business tools</li><li>Advanced management</li><li>Priority support</li></ul>
+      <a class="btn secondary" href="#start">Choose Pro</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="start">
+<div class="container">
+  <div class="cta reveal">
+    <div class="kicker">Your business, organised</div>
+    <h2>Ready to simplify wholesale?</h2>
+    <p>Discover a smarter way to present products, manage enquiries and organise your wholesale workflow.</p>
+    <a class="btn primary" href="mailto:hello@quotely.example">Get in touch →</a>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-inner">
+  <div class="logo">quo<span>tely</span>.</div>
+  <div>© 2026 Quotely. All rights reserved.</div>
+  <div>Wholesale management, simplified.</div>
+</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
